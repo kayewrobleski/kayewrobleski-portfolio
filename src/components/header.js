@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import React from "react"
 import styled from "styled-components"
 import { Nav } from 'react-bootstrap'
+import "typeface-oswald"
+import "typeface-open-sans"
 
 
 const TabBar = styled.div`
@@ -38,42 +40,55 @@ const Button = styled.button`
   
 `
 const StyledLink = styled(Link)`
+  font-family: Oswald, sans-serif;
+  text-transform: uppercase;
+  font-weight: lighter;
   color: coral;
 `
 
-const Header = ({ siteTitle }) => (
-  <header>
-    <TabBar>
-      <Button>Test 1</Button>
-      <Button>Test 2</Button>
-    </TabBar>
-    
-  </header>
-  //   style={{
-  //     background: `rebeccapurple`,
-  //     marginBottom: `1.45rem`,
-  //   }}
-  // >
-  //   <div
-  //     style={{
-  //       margin: `0 auto`,
-  //       maxWidth: 960,
-  //       padding: `1.45rem 1.0875rem`,
-  //     }}
-  //   >
-  //     <h1 style={{ margin: 0 }}>
-  //       <Link
-  //         to="/"
-  //         style={{
-  //           color: `white`,
-  //           textDecoration: `none`,
-  //         }}
-  //       >
-  //         {siteTitle}
-  //       </Link>
-  //     </h1>
-  //   </div>
-  // </header>
+const LinkWrapper = styled.div`
+  margin: 10;
+`
+
+const UpperAppBar = styled.div`
+  width: 100%;
+  height: 15px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: papayawhip;
+  z-index: 1000;
+`
+
+const AppBar = styled.div`
+  width: 100%;
+  height: 50px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  background-color: papayawhip;
+  color: lightcoral;
+  z-index: 1000;
+  display: flex;
+  align-content: center;
+`
+
+const Header = () => (
+  <div>
+    <UpperAppBar />
+    <AppBar>
+      <LinkWrapper>
+        <StyledLink>
+            About
+        </StyledLink>
+      </LinkWrapper>
+      <LinkWrapper>
+        <StyledLink>
+            Contact
+        </StyledLink>
+      </LinkWrapper>
+    </AppBar>
+  </div>
 )
 
 Header.propTypes = {
@@ -85,3 +100,5 @@ Header.defaultProps = {
 }
 
 export default Header
+
+

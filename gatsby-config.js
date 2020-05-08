@@ -39,6 +39,14 @@ module.exports = {
         display: 'swap'
       }
     },
-    `gatsby-plugin-styled-components`
+    `gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `src/data/`,
+      },
+    },
   ],
 }
