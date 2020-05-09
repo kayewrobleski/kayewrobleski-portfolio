@@ -48,5 +48,6 @@ module.exports = {
         path: `src/data/`,
       },
     },
+    `gatsby-plugin-anchor-links`,
   ],
 }

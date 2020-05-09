@@ -40,14 +40,14 @@ const Button = styled.button`
   
 `
 const StyledLink = styled(Link)`
-  font-family: Oswald, sans-serif;
+  font-family: Raleway, sans-serif;
   text-transform: uppercase;
-  font-weight: lighter;
+  font-weight: normal;
   color: coral;
 `
 
 const LinkWrapper = styled.div`
-  margin: 10;
+  padding: 10px 15px;
 `
 
 const UpperAppBar = styled.div`
@@ -70,7 +70,7 @@ const AppBar = styled.div`
   color: lightcoral;
   z-index: 1000;
   display: flex;
-  align-content: center;
+  justify-content: center;
 `
 
 const Header = () => (
@@ -80,6 +80,11 @@ const Header = () => (
       <LinkWrapper>
         <StyledLink>
             About
+        </StyledLink>
+      </LinkWrapper>
+      <LinkWrapper>
+        <StyledLink>
+            Work
         </StyledLink>
       </LinkWrapper>
       <LinkWrapper>

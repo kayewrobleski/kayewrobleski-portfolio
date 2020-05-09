@@ -2,6 +2,7 @@
 import "typeface-oswald"
 import "typeface-open-sans"
 import "typeface-lobster-two"
+import "typeface-raleway"
 
 // import styled from "styled-components"
 // import BackgroundImage from "gatsby-background-image"
@@ -30,7 +31,7 @@ const Container = styled.div`
     z-index: 1;
     // background-color: rgb(47, 79 , 79, 0.6);
     border-radius: 4px;
-    color: #273746
+    color: #34495E
 `
 
 export const StyledWrapper = styled.div`
@@ -59,9 +60,9 @@ export const StyledContentCenterWrapper = styled.div`
 `
 
 const Name = styled.h1`
-    font-family: Oswald, sans-serif;
+    font-family: Raleway, sans-serif;
     font-weight: bold;
-    font-size: 4.0rem;
+    font-size: 3.0rem;
     margin-bottom: 1.15rem;
     margin-top: 1rem;
 `
