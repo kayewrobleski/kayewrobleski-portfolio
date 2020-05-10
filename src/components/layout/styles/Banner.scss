@@ -1,0 +1,110 @@
+@use '../../../styles/breakpoints';
+
+$prefix: "kwBanner";
+
+// Default display
+$display: flex !default;
+// $overflow: 'auto' !default;
+
+/* Thickness variables */
+$xs-label: 'xs';
+$sm-label: 'sm';
+$md-label: 'md';
+$lg-label: 'lg';
+$xl-label: 'xl';
+$fit-content-label: 'fit';
+$xs-value: 35px;
+$sm-value: 50px;
+$md-value: 70px;
+$lg-value: 90px;
+$xl-value: 120px;
+$fit-content-value: 'auto';
+
+/* Position variables */
+$top: 'top';
+$bottom: 'bottom';
+
+/* Justify Content variables */ 
+$left: 'left';
+$center: 'center';
+$right: 'right';
+
+.#{$prefix} { 
+    width: 100%;
+    position: fixed;
+
+    @media (max-width: breakpoints.$layout-breakpoint-sm) {
+        display: flex-column;
+    }
+
+    @media (min-width: breakpoints.$layout-breakpoint-sm+1) {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    // overflow: $overflow;
+    > * {
+        margin: auto 15px;
+    }
+}
+
+@mixin thicknessHeight($label) {
+    @if $label == $xs-label {
+        height: $xs-value;
+    }
+    @else if $label == $sm-label {
+        height: $sm-value;
+    }
+    @else if $label == $md-label {
+        height: $md-value;
+    }
+    @else if $label == $lg-label {
+        height: $lg-value;
+    }
+    @else if $label == $xl-label {
+        height: $xl-value;
+    }
+    @else if $label == $fit-content-label {
+        height: $fit-content-value;
+    }
+}
+
+@mixin thickness($label) {
+    .#{$prefix}-thickness-#{$label} {
+        @include thicknessHeight($label)
+    }
+}
+
+@mixin position($top-or-bottom) {
+    .#{$prefix}-position-#{$top-or-bottom} {
+        #{$top-or-bottom} : 0;
+        right: 0;
+    }
+}
+
+@mixin justifyContent($justify) {
+    .#{$prefix}-justify-#{$justify} {
+        @if $justify == $center {
+            justify-content: #{$justify};
+        }
+        @if $justify == $left {
+            justify-content: flex-start;
+        }
+        @if $justify == $right {
+            justify-content: flex-end;
+        }
+    }
+}
+
+@include thickness($xs-label);
+@include thickness($sm-label);
+@include thickness($md-label);
+@include thickness($lg-label);
+@include thickness($xl-label);
+
+@include position($top);
+@include position($bottom);
+
+@include justifyContent($center);
+@include justifyContent($right);
+

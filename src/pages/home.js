@@ -31,7 +31,7 @@ const Container = styled.div`
     z-index: 1;
     // background-color: rgb(47, 79 , 79, 0.6);
     border-radius: 4px;
-    color: #34495E
+    color: #475665;
 `
 
 export const StyledWrapper = styled.div`
@@ -74,9 +74,9 @@ const Description = styled.h3`
 `
 
 const Divider = styled.hr`
-    width: 450px;
-    border-top: 3px solid #F08080;
-    margin: calc(1.15rem - 1px) auto;
+    width: 350px;
+    border-top: 2px solid #F08080;
+    margin: calc(1.15rem - 2px) auto;
     background-color: transparent;
     // display: none;
 `

@@ -1,0 +1,26 @@
+@use '../../../styles/breakpoints';
+@use './Banner' with (
+    $display: flex-column
+);
+
+
+
+.#{Banner.$prefix}-padding {
+    margin: 0;
+
+    @media (min-width: breakpoints.$layout-breakpoint-lg) {
+        margin: 0;
+        width: 200px;
+    }
+}
+
+@media (max-width: breakpoints.$layout-breakpoint-sm) {
+    .#{Banner.$prefix} {
+        display: Banner.$display;
+    }
+    
+}
+
+
+
+
