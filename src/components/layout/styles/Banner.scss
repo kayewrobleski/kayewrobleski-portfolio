@@ -32,20 +32,20 @@ $right: 'right';
 .#{$prefix} { 
     width: 100%;
     position: fixed;
+    display: flex;
+    flex-wrap: wrap;
 
-    @media (max-width: breakpoints.$layout-breakpoint-sm) {
-        display: flex-column;
-    }
+    // @media (max-width: breakpoints.$layout-breakpoint-sm) {
+    //     display: flex-column;
+    // }
 
-    @media (min-width: breakpoints.$layout-breakpoint-sm+1) {
-        display: flex;
-        flex-wrap: wrap;
-    }
+    // @media (min-width: breakpoints.$layout-breakpoint-sm+1) {
+    //     display: flex;
+    //     flex-wrap: wrap;
+    // }
 
     // overflow: $overflow;
-    > * {
-        margin: auto 15px;
-    }
+    
 }
 
 @mixin thicknessHeight($label) {

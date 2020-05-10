@@ -6,7 +6,6 @@ import {
 } from '@storybook/addon-knobs'
 
 import Banner from '../src/components/layout/Banner'
-import ResponsiveBanner from '../src/components/layout/ResponsiveBanner'
 
 import {
     values
@@ -56,48 +55,19 @@ const inputBackgroundColor = {
     default: 'papayawhip'
 }
 
-const inputTextColor = {
-    label: 'Text Color',
-    default: 'lightcoral'
-}
-
 export const WithProps = () =>  {
     const props = {
         thickness: select(...values(selectThickness)),
         position: select(...values(selectPosition)),
         justifyContent: select(...values(selectJustifyContent)),
-        backgroundColor: text(...values(inputBackgroundColor)),
-        textColor: text(...values(inputTextColor))
+        backgroundColor: text(...values(inputBackgroundColor))
     }
 
     return (
-        <Banner {...props}> 
-            <button>Button</button>
+        <Banner {...props}>
             <h3>Child 1...</h3>
             <h3>Child 2...</h3>
-            <p>Test</p>
         </Banner>
     )
-}
-
-export const Responsive = () => {
-
-    const props = {
-        thickness: select(...values(selectThickness)),
-        position: select(...values(selectPosition)),
-        justifyContent: select(...values(selectJustifyContent)),
-        backgroundColor: text(...values(inputBackgroundColor)),
-        textColor: text(...values(inputTextColor))
-    }
-
-    return (
-        <ResponsiveBanner {...props}> 
-            <button>Button</button>
-            <h3>Child 1...</h3>
-            <h3>Child 2...</h3>
-            <p>Test</p>
-        </ResponsiveBanner>
-    )
-
 }
     
