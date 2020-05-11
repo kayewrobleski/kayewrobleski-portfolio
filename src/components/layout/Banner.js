@@ -7,7 +7,6 @@ import theme from '../../styles/themes/default'
 
 const StyledBanner = styled.div`
     background-color: ${props => props.backgroundColor || props.theme.colors.primary.main};
-
     > * {
         margin: auto ${props => props.theme.spacing(2)};
     }
