@@ -25,20 +25,10 @@ const withTabProps = (
     props, 
     orientation
 ) => {
-    if (orientation === 'vertical') {
-        return (
-            <Component
-                orientation="vertical"
-                topBottomPadding={theme.spacing(2)}
-                labels={labels}
-                { ...props}
-            />
-        );
-    }
-
     return (
         <Component
-            orientation="horizontal"
+            orientation={orientation === 'vertical' ? 'vertical' : 'horizontal'}
+            topBottomPadding={orientation === 'vertical' ? theme.spacing(2) : 0}
             labels={labels}
             { ...props} 
         />

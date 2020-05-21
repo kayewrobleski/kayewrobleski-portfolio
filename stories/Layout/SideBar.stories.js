@@ -9,7 +9,7 @@ import {
     values
 } from 'ramda';
 
-import SideBar from '../../src/components/layout/SideBar';
+import { SideBar } from '../../src/components/surface';
 
 export default {
     title: 'Layout|Side Bar',

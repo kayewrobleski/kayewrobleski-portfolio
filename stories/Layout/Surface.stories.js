@@ -9,7 +9,7 @@ import {
     values
 } from 'ramda';
 
-import Surface from '../../src/components/layout/Surface';
+import { Surface } from '../../src/components/surface';
 
 export default {
     title: 'Layout|Surface',
