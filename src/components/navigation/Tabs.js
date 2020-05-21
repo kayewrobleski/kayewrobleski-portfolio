@@ -2,7 +2,7 @@ import React, { Children, cloneElement } from 'react'
 import PropTypes from 'prop-types'
 import styled, { ThemeProvider } from 'styled-components'
 
-import Tab from './Tab'
+import { Tab, tabStyles } from './index';
 
 const StyledTabs = styled.div`
     &.horizontal {
@@ -19,38 +19,48 @@ const className = (props) => {
         `${props.orientation}`
     );
 }
+
+
+
 const Tabs = (props) => {
 
-    const [selected, setSelected] = React.useState(null);
+    const [selected, setSelected] = React.useState(0);
+
+    // const tabs = props.tabs;
 
     const handleSelected = (index) => {
-        console.log(index)
-        setSelected(index)
+        setSelected(index);
     }
 
-    /* Clone tab components with selected and onClick props */
-    const tabsWithProps = Children.map(props.children, child => cloneElement(
-        child, 
-        {
-            selected: child.props.index == selected,
-            onClick:() => handleSelected(child.props.index)
-        })
+    const tabWithProps = (label, props) => (
+        <Tab 
+            key={label.index} 
+            index={label.index}
+            label={label.value} 
+            onClick={() => handleSelected(label.index)} 
+            isSelected={selected==label.index}
+            {...props}
+        />
     );
 
     return (
         <StyledTabs className={className(props)}>
-            { tabsWithProps }
+            { props.labels.map((label) => tabWithProps(label, props)) }
         </StyledTabs>
     )
 }
 
 Tabs.propTypes = {
-    initalState: PropTypes.number,
-    orientation: PropTypes.oneOf(['vertical', 'horizontal'])
+    orientation: PropTypes.oneOf(['vertical', 'horizontal']),
+    labels: PropTypes.arrayOf(PropTypes.shape({ 
+        index: PropTypes.number, 
+        value: PropTypes.string
+    })),
+    ...PropTypes.objectOf(tabStyles),
 }
 
 Tabs.defaultProps = {
     orientation: 'horizontal'
 }
 
-export default Tabs
+export default Tabs;

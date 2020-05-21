@@ -18,53 +18,35 @@ export default {
     decorators: [withKnobs]
 }
 
-export const Default = () => (
-    <Tabs>
-        <Tab index={0} label="Tab 1" />
-        <Tab index={1} label="Tab 2" />
-        <Tab index={2} label="Tab 3" />
-    </Tabs>
-)
+const labels = [
+    { 
+        index: 0,
+        value: 'Tab 1'
+    },
+    {
+        index: 1,
+        value: 'Tab 2'
+    }, 
+    {
+        index: 2,
+        value: 'Tab 3'
+    }
+];
 
-
+export const Default = () => (<Tabs labels={labels} />);
 
 export const WithProps = () => (
-    <Tabs orientation={select(...values(Knobs.selectOrientation))} >
-        <Tab
-            index={0}
-            label={text(...values(Knobs.inputLabel))}
-            justifyContent={select(...values(Knobs.selectJustifyContent))}
-            backgroundColor={text(...values(Knobs.inputBackgroundColor))}
-            selectedBackgroundColor={text(...values(Knobs.inputSelectedBackgroundColor))}
-            selectedBorderStyle={select(...values(Knobs.selectSelectedBorderStyle))}
-            selectedBorderSide={select(...values(Knobs.selectSelectedBorderSide))}
-            textColor={text(...values(Knobs.inputTextColor))}
-            selectedTextColor={text(...values(Knobs.inputSelectedTextColor))}
-            textTransform={select(...values(Knobs.selectTextTransform))}
-        />
-        <Tab
-            index={1}
-            label={text(...values(Knobs.inputLabel))}
-            justifyContent={select(...values(Knobs.selectJustifyContent))}
-            backgroundColor={text(...values(Knobs.inputBackgroundColor))}
-            selectedBackgroundColor={text(...values(Knobs.inputSelectedBackgroundColor))}
-            selectedBorderStyle={select(...values(Knobs.selectSelectedBorderStyle))}
-            selectedBorderSide={select(...values(Knobs.selectSelectedBorderSide))}
-            textColor={text(...values(Knobs.inputTextColor))}
-            selectedTextColor={text(...values(Knobs.inputSelectedTextColor))}
-            textTransform={select(...values(Knobs.selectTextTransform))}
-        />
-        <Tab
-            index={2}
-            label={text(...values(Knobs.inputLabel))}
-            justifyContent={select(...values(Knobs.selectJustifyContent))}
-            backgroundColor={text(...values(Knobs.inputBackgroundColor))}
-            selectedBackgroundColor={text(...values(Knobs.inputSelectedBackgroundColor))}
-            selectedBorderStyle={select(...values(Knobs.selectSelectedBorderStyle))}
-            selectedBorderSide={select(...values(Knobs.selectSelectedBorderSide))}
-            textColor={text(...values(Knobs.inputTextColor))}
-            selectedTextColor={text(...values(Knobs.inputSelectedTextColor))}
-            textTransform={select(...values(Knobs.selectTextTransform))}
-        />
-    </Tabs>    
+    <Tabs 
+        orientation={select(...values(Knobs.selectOrientation))} 
+        labels={labels}
+        justifyContent={select(...values(Knobs.selectJustifyContent))}
+        backgroundColor={text(...values(Knobs.inputBackgroundColor))}
+        selectedBackgroundColor={text(...values(Knobs.inputSelectedBackgroundColor))}
+        selectedBorderColor={text(...values(Knobs.inputSelectedBorderColor))}
+        selectedBorderStyle={select(...values(Knobs.selectSelectedBorderStyle))}
+        selectedBorderSide={select(...values(Knobs.selectSelectedBorderSide))}
+        textColor={text(...values(Knobs.inputTextColor))}
+        selectedTextColor={text(...values(Knobs.inputSelectedTextColor))}
+        textTransform={select(...values(Knobs.selectTextTransform))}
+    />  
 )

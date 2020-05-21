@@ -3,13 +3,14 @@ import {
     withKnobs,
     select,
     text
-} from '@storybook/addon-knobs'
+} from '@storybook/addon-knobs';
 
-import Banner from '../../src/components/layout/Banner'
+import Banner from '../../src/components/layout/Banner';
+import * as Knobs from './banner-knobs';
 
 import {
     values
-} from 'ramda'
+} from 'ramda';
 
 export default {
     title: 'Layout|Banner',
@@ -18,49 +19,12 @@ export default {
 
 export const Default = () => <Banner />;
 
-const selectThickness = {
-    label: 'Thickness',
-    options: {
-        XLarge: 'xl',
-        Large: 'lg',
-        Medium: 'md',
-        Small: 'sm',
-        XSmall: 'xs',
-        'Fit Content': 'fit'
-    },
-    default: 'md'
-}
-
-const selectPosition = {
-    label: 'Position',
-    options: {
-        Top: 'top',
-        Bottom: 'bottom'
-    },
-    default: 'top'
-}
-
-const selectJustifyContent = {
-    label: 'Justify Content',
-    options: {
-        Left: 'left',
-        Right: 'right',
-        Center: 'center'
-    },
-    default: 'left'
-}
-
-const inputBackgroundColor = {
-    label: 'Background Color',
-    default: 'papayawhip'
-}
-
 export const WithProps = () =>  {
     const props = {
-        thickness: select(...values(selectThickness)),
-        position: select(...values(selectPosition)),
-        justifyContent: select(...values(selectJustifyContent)),
-        backgroundColor: text(...values(inputBackgroundColor))
+        thickness: select(...values(Knobs.selectThickness)),
+        position: select(...values(Knobs.selectPosition)),
+        justifyContent: select(...values(Knobs.selectJustifyContent)),
+        backgroundColor: text(...values(Knobs.inputBackgroundColor))
     }
 
     return (

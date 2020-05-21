@@ -14,7 +14,7 @@ import Logo from './Logo'
 
 import Header from "./header"
 import "./layout.css"
-import "./layout/styles/Banner.scss"
+// import "./layout/styles/Banner.scss"
 
 const CustomizedBanner = styled(Banner)`
   box-shadow: 0 0.05em 0.3em lightcoral;

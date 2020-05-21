@@ -1,6 +1,9 @@
 import "typeface-open-sans"
 import "typeface-raleway"
 
+// const typefaceOpenSans = require('typeface-open-sans');
+// const typefaceRaleway = require('typeface-raleway');
+
 const theme = {
     classPrefix: 'kw',
     colors: {
@@ -75,23 +78,38 @@ const theme = {
             lg: '1280px',
             md: '960px',
             sm: '600px',
-            xs: '0px',
+            xs: '350px',
         },
         up: (key) => breakpointUp(key),
         down: (key) => breakpointDown(key),
         between: (up, down) => breakpointBetween(up, down)
     },
-    spacing: (factor) => `${0.25 * factor}rem`,
+    spacing: (factor) => calcSpacing(factor),
+    thickness: (value) => calcThickness(value)
+}
+
+const calcSpacing = (factor) => `${0.25 * factor}rem`;
+
+const calcThickness = (value) => {
+    let factor = value;
+    switch (value) {
+        case 'xs': factor = 10; break;
+        case 'sm': factor = 12; break;
+        case 'md': factor = 15; break;
+        case 'lg': factor = 20; break;
+        case 'xl': factor = 28; break;
+    }
+    return calcSpacing(factor);
 }
 
 const breakpointUp = (key) => {
     const value = theme.breakpoints.values[key];
-    return `@media only screen and (min-width: ${value})`;
+    return `@media (min-width: ${value})`;
 }
 
 const breakpointDown = (key) => {
     const value = theme.breakpoints.values[key];
-    return `@media only screen and (max-width: ${value})`;
+    return `@media (max-width: ${value})`;
 }
 
 const breakpointBetween = (up, down) => {

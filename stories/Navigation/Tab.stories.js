@@ -27,21 +27,26 @@ export const Default = () => (
     />
 );
 
-export const WithProps = () => (
+export const WithProps = () => {
 
-    <Tab
+    const selectedProps = {
+        backgroundColor: text(...values(Knobs.inputSelectedBackgroundColor)),
+        borderSide: select(...values(Knobs.selectSelectedBorderSide)),
+        borderStyle: select(...values(Knobs.selectSelectedBorderStyle)),
+        borderColor: text('Selected Border Color', 'lightcoral'),
+        textColor: text(...values(Knobs.inputSelectedTextColor))
+    }
+
+    return <Tab
         index={0}
         label={text(...values(Knobs.inputLabel))}
-        selected={boolean(...values(Knobs.inputSelected))}
+        isSelected={boolean(...values(Knobs.inputSelected))}
         justifyContent={select(...values(Knobs.selectJustifyContent))}
         backgroundColor={text(...values(Knobs.inputBackgroundColor))}
-        selectedBackgroundColor={text(...values(Knobs.inputSelectedBackgroundColor))}
-        selectedBorderStyle={select(...values(Knobs.selectSelectedBorderStyle))}
-        selectedBorderSide={select(...values(Knobs.selectSelectedBorderSide))}
+        selected={selectedProps}
         textColor={text(...values(Knobs.inputTextColor))}
-        selectedTextColor={text(...values(Knobs.inputSelectedTextColor))}
         textTransform={select(...values(Knobs.selectTextTransform))}
         onClick={action('clicked')}
     />
-)
+}
 

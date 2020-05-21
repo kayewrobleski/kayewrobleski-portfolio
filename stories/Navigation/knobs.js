@@ -1,13 +1,11 @@
 export const inputLabel = {
     label: 'Label',
-    default: 'Tab with Props',
-    groupId: 'Basic'
+    default: 'Tab with Props'
 }
 
 export const inputSelected = {
     label: 'Selected?',
-    default: false,
-    groupId: 'Basic'
+    default: false
 }
 
 export const selectJustifyContent = {
@@ -22,26 +20,27 @@ export const selectJustifyContent = {
 
 export const inputTextColor = {
     label: 'Text Color',
-    default: '',
-    groupId: 'Color'
+    default: ''
 }
 
 export const inputSelectedTextColor = {
     label: 'Selected Text Color',
-    default: '',
-    groupId: 'Color'
+    default: ''
 }
 
 export const inputBackgroundColor = {
     label: 'Background Color',
-    default: '',
-    groupId: 'Color'
+    default: ''
 }
 
 export const inputSelectedBackgroundColor = {
     label: 'Selected Background Color',
-    default: '',
-    groupId: 'Color'
+    default: ''
+}
+
+export const inputSelectedBorderColor = {
+    label: 'Selected Border Color',
+    default: ''
 }
 
 export const selectSelectedBorderStyle = {
@@ -82,6 +81,5 @@ export const selectOrientation = {
         Horizontal: 'horizontal',
         Vertical: 'vertical'
     },
-    default: 'horizontal',
-    group: 'Basic'
+    default: 'horizontal'
 }
