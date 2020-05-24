@@ -12,7 +12,7 @@ import {
 import { SideBar } from '../../src/components/surface';
 
 export default {
-    title: 'Layout|Side Bar',
+    title: 'Surface|Side Bar',
     decorators: [withKnobs]
 }
 

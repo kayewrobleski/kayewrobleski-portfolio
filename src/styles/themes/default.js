@@ -74,11 +74,11 @@ const theme = {
             4: 'xl'
         },
         values: {
-            xl: '1920px',
-            lg: '1280px',
-            md: '960px',
-            sm: '600px',
-            xs: '350px',
+            xl: 1920,
+            lg: 1280,
+            md: 960,
+            sm: 600,
+            xs: 350,
         },
         up: (key) => breakpointUp(key),
         down: (key) => breakpointDown(key),
@@ -104,18 +104,18 @@ const calcThickness = (value) => {
 
 const breakpointUp = (key) => {
     const value = theme.breakpoints.values[key];
-    return `@media (min-width: ${value})`;
+    return `@media (min-width: ${value}px)`;
 }
 
 const breakpointDown = (key) => {
     const value = theme.breakpoints.values[key];
-    return `@media (max-width: ${value})`;
+    return `@media (max-width: ${value}px)`;
 }
 
 const breakpointBetween = (up, down) => {
     const valueUp = theme.breakpoints.values[up];
     const valueDown = theme.breakpoints.values[down];
-    return `@media only screen and (min-width: ${valueUp}) and (max-width: ${valueDown})`;
+    return `@media only screen and (min-width: ${valueUp}px) and (max-width: ${valueDown}px)`;
 }
 
 export default theme;

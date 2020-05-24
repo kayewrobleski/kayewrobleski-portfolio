@@ -1,4 +1,4 @@
-import React, { Children, cloneElement } from 'react'
+import React, { Component, Children, cloneElement } from 'react'
 import PropTypes from 'prop-types'
 import styled, { ThemeProvider } from 'styled-components'
 
@@ -63,4 +63,4 @@ Tabs.defaultProps = {
     orientation: 'horizontal'
 }
 
-export default Tabs;
+export default Tabs

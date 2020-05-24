@@ -12,7 +12,7 @@ import {
 import { Surface } from '../../src/components/surface';
 
 export default {
-    title: 'Layout|Surface',
+    title: 'Surface|Surface',
     decorators: [withKnobs]
 }
 

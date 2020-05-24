@@ -6,9 +6,10 @@ import Surface from './Surface';
 import theme from '../../styles/themes/default';
 
 const StyledSurface = styled(Surface)`
-    position: absolute;
+    position: fixed;
     left: 0;
     ${props => props.position}: 0;
+    z-index: 10000;
 `
 
 const Banner = (props) => 

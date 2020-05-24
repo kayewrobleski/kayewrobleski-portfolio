@@ -12,7 +12,7 @@ import {
 
 import { Tab, Tabs, ResponsiveTabBar } from '../../src/components/navigation'
 import * as TabKnobs from './knobs';
-import * as BannerKnobs from '../Layout/banner-knobs';
+import * as BannerKnobs from '../Surface/banner-knobs';
 
 export default {
     title: 'Navigation|Tabs/ResponsiveTabBar',

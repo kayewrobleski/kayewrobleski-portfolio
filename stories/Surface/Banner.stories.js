@@ -13,7 +13,7 @@ import {
 } from 'ramda';
 
 export default {
-    title: 'Layout|Banner',
+    title: 'Surface|Banner',
     decorators: [withKnobs]
 }
 

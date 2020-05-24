@@ -8,33 +8,55 @@ import {
 } from '../common';
 
 
-const StyledTab = styled.div`
-    font-family: ${props => props.theme.typography.fontFamily.secondary};
-    font-size: ${props => props.theme.typography.h4.fontSize};
-    color: ${props => props.textColor};
-    background-color: ${props => props.backgroundColor};
-    text-transform: ${props => props.textTransform};
-    padding: ${props => props.topBottomPadding} ${props => props.theme.spacing(3)};
-    max-width: 7rem;
-    min-width: 4rem;
-    cursor: default;
-    display: flex;
-    align-items: center;
-    justify-content: ${props => props.justifyContent === 'center' ? 'center' : props.justifyContent === 'right' ? 'flex-end' : 'flex-start'};
+// const StyledTab = styled.div`
+//     font-family: ${props => props.theme.typography.fontFamily.secondary};
+//     font-size: ${props => props.theme.typography.h4.fontSize};
+//     color: ${props => props.textColor};
+//     background-color: ${props => props.backgroundColor};
+//     text-transform: ${props => props.textTransform};
+//     padding: ${props => props.topBottomPadding} ${props => props.theme.spacing(3)};
+//     max-width: 7rem;
+//     min-width: 4rem;
+//     cursor: default;
+//     display: flex;
+//     align-items: center;
+//     justify-content: ${props => props.justifyContent === 'center' ? 'center' : props.justifyContent === 'right' ? 'flex-end' : 'flex-start'};
 
-    &.selected {
-        background-color: ${props => props.selected.backgroundColor};
-        color: ${props => props.selected.textColor};
-        border-${props => props.selected.borderSide}-style: ${props => props.selected.borderStyle};
-        border-color: ${props => props.selected.borderColor};
-        border-width: 0.1rem;
-        &.selected-border-side-left, &.selected-border-side-left {
-            padding-${props => props.selected.borderSide}: calc(${props => props.theme.spacing(3)} - 0.1em);
-        }
-        &.selected-border-side-top, &.selected-border-side-bottom {
-            padding-${props => props.selected.borderSide}: calc(${props => props.spacing} - 0.1em);
-        }
-    }
+//     &.selected {
+//         background-color: ${props => props.selected.backgroundColor};
+//         color: ${props => props.selected.textColor};
+//         border-${props => props.selected.borderSide}-style: ${props => props.selected.borderStyle};
+//         border-color: ${props => props.selected.borderColor};
+//         border-width: 0.1rem;
+//         &.selected-border-side-left, &.selected-border-side-left {
+//             padding-${props => props.selected.borderSide}: calc(${props => props.theme.spacing(3)} - 0.1em);
+//         }
+//         &.selected-border-side-top, &.selected-border-side-bottom {
+//             padding-${props => props.selected.borderSide}: calc(${props => props.spacing} - 0.1em);
+//         }
+//     }
+// `
+
+const StyledTab = styled.div`
+    height: calc(${props => props.height} - 1rem);
+    line-height: 2rem;
+    vertical-align: middle;
+	margin: 1rem;
+	text-align: center;
+	position: relative;
+	background: transparent;
+	font-family: Raleway, sans-serif;
+	font-size: 1rem;
+	font-weight: 600;
+	color: darkslategray;
+	transition: color .3s;
+	&:hover {
+		color: lightcoral;
+	}
+	&.selected {
+		color: white;
+		transition: color .3s .075s;
+	}
 `
 const className = (props) => {
     const hasBorder = props.selectedBorderStyle != 'none';
@@ -44,14 +66,33 @@ const className = (props) => {
     );
 }
 
-const Tab = (props) => (
-    <ThemeProvider theme={props.theme}>
-        <StyledTab className={className(props)} {...props}>
-            <div className="label">
-                { props.label }
-            </div> 
+// const Tab = (props) => (
+//     <ThemeProvider theme={props.theme}>
+//         <StyledTab className={className(props)} {...props}>
+//             <div className="label">
+//                 { props.label }
+//             </div> 
+//         </StyledTab>
+//     </ThemeProvider>);
+
+const Tab = (props) => {
+	const { 
+		index, 
+		selected, 
+		label, 
+		clickHandler 
+    } = props;
+
+	return <ThemeProvider theme={props.theme}>
+        <StyledTab
+            id={`tab-${index}`}
+            className={`tab ${selected ? 'selected' : ''}`}
+            onClick={clickHandler} 
+            {...props} >
+            { label }
         </StyledTab>
-    </ThemeProvider>);
+    </ThemeProvider>;
+}
 
 export const tabStyles = {
     justifyContentProp,
@@ -59,7 +100,7 @@ export const tabStyles = {
     backgroundColor: PropTypes.string,
     textColor: PropTypes.string,
     spacing: PropTypes.string,
-    selected: {
+    selectedStyles: {
         backgroundColor: PropTypes.string,
         borderStyle: PropTypes.oneOf(['solid', 'outset', 'none']),
         borderSide: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
@@ -69,22 +110,22 @@ export const tabStyles = {
 
 Tab.propTypes = {
     label: PropTypes.string,
-    isSelected: PropTypes.bool,
-    ...PropTypes.shape(tabStyles)
+    selected: PropTypes.bool,
+    // ...PropTypes.shape(tabStyles)
 }
 
 Tab.defaultProps = {
     theme: theme,
-    isSelected: false,
-    justifyContent: 'center',
-    backgroundColor: 'transparent',
-    selected: {
-        backgroundColor: 'transparent',
-        borderSide: 'bottom',
-        borderStyle: 'solid'
-    },
-    textTransform: 'none',
-    spacing: '0'
+    selected: false,
+    height: theme.thickness('md')
+    // justifyContent: 'center',
+    // backgroundColor: 'transparent',
+    // selectedStyles: {
+    //     backgroundColor: 'transparent',
+    //     borderStyle: 'none'
+    // },
+    // textTransform: 'none',
+    // spacing: '0'
 }
 
-export default Tab
+export default Tab;
