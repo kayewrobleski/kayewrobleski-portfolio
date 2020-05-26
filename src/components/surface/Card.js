@@ -32,7 +32,7 @@ const Description = styled.div`
 const Card = (props) => (
     <ThemeProvider theme={props.theme}>
         <Container>
-            <CardImage src={profile} height="200" width="200"/>
+            <CardImage src={profile} height="201" width="200"/>
             <Description />
         </Container>
     </ThemeProvider>
