@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import styled from 'styled-components'
+import styled, { ThemeProvider } from 'styled-components'
 
 import Surface from './Surface';
 import theme from '../../styles/themes/default';
@@ -10,14 +10,43 @@ const StyledSurface = styled(Surface)`
     left: 0;
     ${props => props.position}: 0;
     z-index: 10000;
+
+    .content {
+        flex-grow: 1;
+    }
+`
+const StyledBanner = styled.div`
+    position: fixed;
+    ${props => props.position}: 0;
+    left: 0;
+    width: 100%;
+    height: ${props => props.theme.thickness(props.thickness)};
+    z-index: 10000;
+    display: flex;
+    background: ${props => props.theme.colors.primary.main};
+
+    .content {
+        flex-grow: 1;
+        display: flex;
+    }
 `
 
-const Banner = (props) => 
-    <StyledSurface 
-        width="100%" 
-        height={theme.thickness(props.thickness)} 
-        {...props}
-    />;
+const Padding = styled.div`
+    ${props => props.theme.breakpoints.up('md')} {
+        width: 15%;
+    }
+    ${props => props.theme.breakpoints.down('sm')} {
+        width: 0;
+    }
+`
+
+const Banner = (props) => <ThemeProvider theme={props.theme}>
+        <StyledBanner {...props}>
+            <Padding />
+            <div className="content">{props.children}</div>
+            <Padding />
+        </StyledBanner>
+    </ThemeProvider>
 
 Banner.propTypes = {
     thickness: PropTypes.oneOfType([
@@ -30,7 +59,8 @@ Banner.propTypes = {
 }
 
 Banner.defaultProps = {
-    thickness: 'md',
+    theme: theme,
+    thickness: 'sm',
     position: 'top',
     justifyContent: 'left'
 }
