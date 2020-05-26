@@ -1,20 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
 import {
     withKnobs,
     boolean
 } from '@storybook/addon-knobs'
 
-import {
-    values
-} from 'ramda'
-
-import { Tab } from '../../src/components/navigation'
+import Tab from '../../src/components/navigation/Tab'
 import TabBar from '../../src/components/navigation/TabBar'
-import ResponsiveTabBar2 from '../../src/components/navigation/ResponsiveTabBar2'
+import ResponsiveTabBar from '../../src/components/navigation/ResponsiveTabBar'
 import * as Knobs from './knobs'
 
 export default {
-    title: 'Navigation|Tabs/TabBar',
+    title: 'Navigation|TabBar',
     decorators: [withKnobs]
 }
 
@@ -69,7 +65,10 @@ const ResponsiveStory = (props) => {
 
     const vertical = window.innerWidth < 600;
 
-    return <ResponsiveTabBar2 selected={selected} vertical={vertical}>{ tabs }</ResponsiveTabBar2>
+    return <ResponsiveTabBar 
+        selected={selected} 
+        vertical={vertical}>{ tabs }
+    </ResponsiveTabBar>
 }
 
 export const Responsive = () => <ResponsiveStory />

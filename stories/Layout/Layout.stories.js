@@ -5,4 +5,4 @@ export default {
     title: 'Layout|Page Layout'
 }
 
-export const Default = () => <Layout><h1>Test Child</h1></Layout>;
+export const Default = () => <Layout/>;

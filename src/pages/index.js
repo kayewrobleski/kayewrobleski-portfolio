@@ -1,15 +1,8 @@
 import React from "react"
-import { Link } from "gatsby"
-
-import Layout from "../components/layout"
-import HomePage from "./home"
-import Image from "../components/image"
-import SEO from "../components/seo"
+import Layout from "../components/Layout"
 
 const IndexPage = () => (
-  <Layout>
-    <HomePage />
-  </Layout>
+  <Layout />
 )
 
 export default IndexPage

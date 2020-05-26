@@ -1,62 +1,22 @@
-// import React from 'react'
-import "typeface-oswald"
-import "typeface-open-sans"
-import "typeface-lobster-two"
-import "typeface-raleway"
-
-// import styled from "styled-components"
-// import BackgroundImage from "gatsby-background-image"
-// import Img from "gatsby-image"
-// // import { useStaticQuery, graphql } from "gatsby"
-// import StaticQuery from "gatsby"
-
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 
-import BackgroundImage from 'gatsby-background-image'
-import "./styles/background-image.css"
+import "typeface-open-sans"
+import "typeface-raleway"
+
+import Page from './Page'
 
 const Container = styled.div`
     text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -moz-transform: translateX(-50%) translateY(-50%);
-    -webkit-transform: translateX(-50%) translateY(-50%);
-    transform: translateX(-50%) translateY(-50%);
-    color: white;
-    // width: 100%;
-    width: 500px;
-    z-index: 1;
-    // background-color: rgb(47, 79 , 79, 0.6);
+    // width: 500px;
     border-radius: 4px;
     color: #475665;
-`
-
-export const StyledWrapper = styled.div`
-  // height: 100vh;
-  width: 100%;
-  display: flex;
-  place-content: start;
-`
-
-export const StyledFullScreenWrapper = styled.div`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  overflow: hidden;
-  z-index: 0;
-  opacity: 0.25;
-`
-
-export const StyledContentCenterWrapper = styled.div`
-  display: flex;
-  text-align: center;
-  color: #ccc;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 auto;
 `
 
 const Name = styled.h1`
@@ -74,86 +34,22 @@ const Description = styled.h3`
 `
 
 const Divider = styled.hr`
-    width: 350px;
+    width: 300px;
     border-top: 2px solid #F08080;
     margin: calc(1.15rem - 2px) auto;
     background-color: transparent;
-    // display: none;
 `
-
-const NewOrleansFullBackground = ({className, children}) => {
-  const data = useStaticQuery(
-    graphql`
-      query {
-        desktop: file(relativePath: { eq: "images/new-orleans-bg-lg.jpeg"}) {
-          childImageSharp {
-            fluid(maxWidth: 4160, quality: 90) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
-    `
-  )
-
-  return (
-    <StyledFullScreenWrapper>
-      <BackgroundImage
-        Tag="section"
-        className={className}
-        title="New Orleans Fullscreen Background"
-        role="img"
-        preserveStackingContext={true}
-        fluid={data.desktop.childImageSharp.fluid}
-      >
-        { children }
-      </BackgroundImage>
-    </StyledFullScreenWrapper>
-  );
-}
-
-// background-size="contain"
-
-
-const TopAppBar = styled.div`
-  width: 100%;
-  height: 15px;
-  position: fixed;
-  top: 0;
-  right: 0;
-  background-color: papayawhip;
-  // display: none;
-`
-
-const BottomAppBar = styled.div`
-  width: 100%;
-  height: 40px;
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  background-color: white;
-`
-
-const StyledFullBackground = styled(NewOrleansFullBackground)`
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 0;
-  opacity: 0.25;
-`
-
 
 const HomePage = () => (
-    <div>
-    {/* <StyledFullBackground /> */}
-    <Container>
-        <Name>Kaye Wrobleski</Name>
-        <Divider />
-        <Description>Full Stack Software Engineer</Description>
-    </Container>
-  </div>
+    <Page>
+        <Container>
+        <div>
+            <Name>Kaye Wrobleski</Name>
+            <Divider />
+            <Description>Full Stack Software Engineer</Description>
+        </div>
+        </Container>
+    </Page>
 )
 
 export default HomePage
