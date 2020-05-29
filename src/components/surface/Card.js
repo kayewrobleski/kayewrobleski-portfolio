@@ -2,38 +2,33 @@ import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 
 import CardImage from './CardImage'
+import CardContent from './CardContent'
+import Body1 from '../typography/body/Body1'
 import profile from '../../images/profile.jpeg'
 import theme from '../../styles/themes/default'
 
 const Container = styled.div`
     
-    border-style: solid;
-    min-height: ${props => props.theme.spacing(60)};
-    min-width: ${props => props.theme.spacing(50)};
+    // background: ${props => props.theme.colors.primary.light};
+    min-height: ${props => props.height || props.theme.spacing(60)};
     ${props => props.theme.breakpoints.up('md')} {
-        max-width: 60%;
         display: flex;
-        max-height: ${props => props.theme.spacing(60)};
+        max-height: ${props => props.height || props.theme.spacing(60)};
     }
     ${props => props.theme.breakpoints.down('sm')} {
         max-width: 90%;
         display: flex-column;
         max-height: fit-content;
+        margin: 0 auto;
     }
     overflow-y: scroll;
     
 `
 
-const Description = styled.div`
-    flex-grow: 1;
-    border-style: solid;
-`
-
 const Card = (props) => (
     <ThemeProvider theme={props.theme}>
-        <Container>
-            <CardImage src={profile} height="201" width="200"/>
-            <Description />
+        <Container height={props.height ? `${props.height}px` : null}>
+            { props.children }
         </Container>
     </ThemeProvider>
 )
@@ -42,4 +37,4 @@ Card.defaultProps = {
     theme: theme
 }
 
-export default Card;
+export default Card

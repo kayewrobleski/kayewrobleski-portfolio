@@ -8,14 +8,15 @@ import Page from './Page'
 
 const Container = styled.div`
     text-align: center;
-    // width: 500px;
     border-radius: 4px;
     color: #475665;
     width: 100%;
-    height: 100%;
+    height: 70%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    // align-items: center;
+    position: absolute;
+    top: 30%;
     flex: 1 1 auto;
 `
 

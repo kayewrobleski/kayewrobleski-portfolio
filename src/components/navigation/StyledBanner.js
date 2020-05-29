@@ -4,7 +4,7 @@ import Banner  from '../surface/Banner'
 import theme from '../../styles/themes/default'
 
 const BannerWithBoxShadow = styled(Banner)`
-    box-shadow: 0px 5px 10px ${props => props.theme.colors.primary.light};
+    box-shadow: 0px 3px 5px ${props => props.theme.colors.primary.dark};
 `
 
 const StyledBanner = (props) => (

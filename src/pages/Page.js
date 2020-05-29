@@ -9,9 +9,13 @@ const StyledPage = styled.div`
     width: inherit;
 
     top: ${props => props.theme.thickness('sm')};
-    display: flex;
+    display: flex-column;
     height: calc(100% - ${props => props.theme.thickness('sm')});
     overflow-x: hidden;
+    -ms-overflow-style: none;
+    ::-webkit-scrollbar {
+        display: none;
+    }
 `
 
 const Page = (props) => <ThemeProvider theme={props.theme}>

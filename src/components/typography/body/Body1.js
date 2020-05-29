@@ -3,11 +3,12 @@ import PropTypes from 'prop-types'
 import styled, { ThemeProvider } from 'styled-components'
 import theme from '../../../styles/themes/default'
 
-const StyledBody1= styled.p`
+const StyledBody1 = styled.div`
     font-family: ${props => props.theme.typography.fontFamily.primary};
     font-size: ${props => props.theme.typography.body1.fontSize};
     font-weight: ${props => props.theme.typography.fontWeight.normal};
     color: ${props => props.theme.colors.text.primary};
+    margin: 0;
 `
 
 const Body1 = (props) => {

@@ -8,6 +8,7 @@ const StyledHeader6 = styled.h6`
     font-size: ${props => props.theme.typography.h6.fontSize};
     font-weight: ${props => props.theme.typography.fontWeight.bold};
     color: ${props => props.theme.colors.text.primary};
+    margin: 0;
 `
 
 const Header6 = (props) => {

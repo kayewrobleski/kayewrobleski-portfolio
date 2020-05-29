@@ -1,30 +1,32 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
 
-import Header1 from '../typography/headers/Header1'
+import Header3 from '../typography/headers/Header3'
 import theme from '../../styles/themes/default'
 
-const StyledPageHeader = styled.div`
+const Container = styled.div`
     width: 100%;
+    text-align: center;
+    text-transform: uppercase;
     ${props => props.theme.breakpoints.up('md')} {
-        margin: 3rem 0;
+        margin: 3rem 0 0 0;
     }
     ${props => props.theme.breakpoints.down('sm')} {
-        margin: 2rem 0;
+        margin: 1rem 0;
     }    
 `
 
-const PageHeader = (props) => (
+const SectionHeader = (props) => (
     <ThemeProvider theme={props.theme}>
-    <StyledPageHeader>
-        <Header1>{ props.children }</Header1>
-    </StyledPageHeader>
+    <Container>
+        <Header3>{ props.children }</Header3>
+    </Container>
     </ThemeProvider>
 )
 
-PageHeader.defaultProps = {
+SectionHeader.defaultProps = {
     theme: theme
 }
     
 
-export default PageHeader
+export default SectionHeader

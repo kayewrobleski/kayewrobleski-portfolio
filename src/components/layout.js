@@ -22,7 +22,7 @@ const StyledLayout = styled.div`
   }
 
   ${props => props.theme.breakpoints.down('sm')} {
-      width: 100%;
+      width: 95%;
   }
 `
 const tabs = [

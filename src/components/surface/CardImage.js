@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 
 const Container = styled.div`
+    // position: absolute;
+    // margin: 0 1rem;
     width: inherit;
     height: inherit;
     display: flex;
@@ -10,12 +12,8 @@ const Container = styled.div`
 `
 
 const StyledImage = styled.img`
-    border-style: solid;
     height: ${props => props.height}px;
     width: ${props => props.width}px;
-    
-    // align-self: center;
-    // justify-self: center;
 `
 
 export const CardImage = (props) => (

@@ -7,18 +7,34 @@ import "typeface-raleway"
 const theme = {
     classPrefix: 'kw',
     colors: {
+        // primary: {
+        //     light: '#fff9ee',
+        //     main: '#ffefd5', // papayawhip
+        //     dark: '#ffe5bb'
+        // },
+        // secondary: {
+        //     light: '#f39797',
+        //     main: '#f08080', // lightcoral
+        //     dark: '#ed6969'
+        // },
+        // text: {
+        //     primary: '#475665',
+        //     secondary: '#5c6f83',
+        //     enhanced: '#3c4956',
+        // },
         primary: {
-            light: '#fff9ee',
-            main: '#ffefd5', // papayawhip
+            light: '#e3e2df',
+            main: 'lightsteelblue', // papayawhip
             dark: '#ffe5bb'
         },
         secondary: {
             light: '#f39797',
-            main: '#f08080', // lightcoral
-            dark: '#ed6969'
+            main: 'lightcoral', // lightcoral
+            dark: '#ed6969',
+            contrast: 'midnightblue'
         },
         text: {
-            primary: '#475665',
+            primary: 'white',
             secondary: '#5c6f83',
             enhanced: '#3c4956',
         },
