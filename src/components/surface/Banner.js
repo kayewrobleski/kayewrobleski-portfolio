@@ -2,19 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { ThemeProvider } from 'styled-components'
 
-import Surface from './Surface';
 import theme from '../../styles/themes/default';
 
-const StyledSurface = styled(Surface)`
-    position: fixed;
-    left: 0;
-    ${props => props.position}: 0;
-    z-index: 10000;
-
-    .content {
-        flex-grow: 1;
-    }
-`
 const StyledBanner = styled.div`
     position: fixed;
     ${props => props.position}: 0;
@@ -24,6 +13,7 @@ const StyledBanner = styled.div`
     z-index: 10000;
     display: flex;
     background: ${props => props.theme.colors.primary.main};
+    padding: 0.5rem 0 0 0;
 
     .content {
         flex-grow: 1;

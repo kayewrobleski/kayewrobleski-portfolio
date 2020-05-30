@@ -5,9 +5,9 @@ import ResponsiveTabBar from './navigation/ResponsiveTabBar'
 import Tab from './navigation/Tab'
 import theme from '../styles/themes/default'
 
-import HomePage from '../pages/Home'
-import AboutPage from '../pages/About'
-import ContactPage from '../pages/Contact'
+import HomePage from './pages/home/HomePage'
+import AboutPage from './pages/about/AboutPage'
+import ContactPage from './pages/contact/ContactPage'
 
 const StyledLayout = styled.div`
   .nav {
@@ -15,14 +15,12 @@ const StyledLayout = styled.div`
   }
 
   overflow: auto;
-
-  ${props => props.theme.breakpoints.up('md')} {
-      width: 70%;
-      margin: auto;
-  }
-
-  ${props => props.theme.breakpoints.down('sm')} {
+  // margin: auto;
+  width: 70%;
+  margin: auto;
+  ${props => props.theme.breakpoints.down('xs')} {
       width: 95%;
+      margin: auto;
   }
 `
 const tabs = [

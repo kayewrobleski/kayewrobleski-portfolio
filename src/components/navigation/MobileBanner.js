@@ -2,7 +2,7 @@ import React  from 'react'
 import styled from 'styled-components'
 import Menu from '@material-ui/icons/Menu'
 
-import { Banner } from '../surface'
+import Banner from '../surface/Banner'
 import BannerLogo from './BannerLogo'
 import BannerPadding from './BannerPadding'
 import BannerSpacer from './BannerSpacer'

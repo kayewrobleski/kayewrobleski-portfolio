@@ -1,52 +1,33 @@
 import "typeface-open-sans"
-import "typeface-raleway"
-
-// const typefaceOpenSans = require('typeface-open-sans');
-// const typefaceRaleway = require('typeface-raleway');
+import "typeface-oswald"
 
 const theme = {
     classPrefix: 'kw',
     colors: {
-        // primary: {
-        //     light: '#fff9ee',
-        //     main: '#ffefd5', // papayawhip
-        //     dark: '#ffe5bb'
-        // },
-        // secondary: {
-        //     light: '#f39797',
-        //     main: '#f08080', // lightcoral
-        //     dark: '#ed6969'
-        // },
-        // text: {
-        //     primary: '#475665',
-        //     secondary: '#5c6f83',
-        //     enhanced: '#3c4956',
-        // },
         primary: {
-            light: '#e3e2df',
-            main: 'lightsteelblue', // papayawhip
-            dark: '#ffe5bb'
+            light: '#263859',
+            main: '#17223b'
         },
         secondary: {
-            light: '#f39797',
-            main: 'lightcoral', // lightcoral
-            dark: '#ed6969',
-            contrast: 'midnightblue'
+            main: '#ff6768'
         },
         text: {
-            primary: 'white',
-            secondary: '#5c6f83',
-            enhanced: '#3c4956',
+            primary: '#8290AA',
+            secondary: '#ffffff'
         },
         common: {
             black: '#000000',
             white: '#ffffff'
+        },
+        surface: {
+            on: '#6b778d',
+            shadow: '#cb3100'
         }
     },
     typography: {
         fontFamily: {
             primary: 'Open Sans, sans-serif',
-            secondary: 'Raleway, sans-serif',
+            secondary: 'Oswald, sans-serif',
         },
         fontWeight: {
             light: 300,

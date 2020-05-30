@@ -1,28 +1,11 @@
 import React from 'react'
-import styled, { ThemeProvider } from 'styled-components'
-
-import Header3 from '../typography/headers/Header3'
+import styled from 'styled-components'
 import theme from '../../styles/themes/default'
 
-const Container = styled.div`
-    width: 100%;
-    text-align: center;
-    text-transform: uppercase;
-    ${props => props.theme.breakpoints.up('md')} {
-        margin: 3rem 0 0 0;
-    }
-    ${props => props.theme.breakpoints.down('sm')} {
-        margin: 1rem 0;
-    }    
+const SectionHeader = styled.h3`
+    font-family: ${props => props.theme.typography.fontFamily.secondary};
+    color: ${props => props.theme.colors.text.secondary};
 `
-
-const SectionHeader = (props) => (
-    <ThemeProvider theme={props.theme}>
-    <Container>
-        <Header3>{ props.children }</Header3>
-    </Container>
-    </ThemeProvider>
-)
 
 SectionHeader.defaultProps = {
     theme: theme

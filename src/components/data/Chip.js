@@ -1,30 +1,18 @@
 import React from 'react'
 import styled, { ThemeProvider } from 'styled-components'
-import Body1 from '../typography/body/Body1'
 
-import theme from '../../styles/themes/default'
+import theme from '../../styles/themes/default' 
 
-const Container = styled.div`
-    margin: 0.5rem;
+const Chip = styled.div`
+    margin: 0 0.3rem 0.3rem 0;
     background: ${props => props.theme.colors.secondary.main};
+    color: ${props => props.theme.colors.text.secondary};
+    font-family: ${props => props.theme.typography.fontFamily.primary};
+    font-size: 0.9rem;
     width: fit-content;
-    padding: 0.5rem 1.2rem;
+    padding: 0.25rem 1.25rem;
     border-radius: 1rem;
-
-    p {
-        color: ${props => props.theme.colors.common.white};
-    }
-    
 `
-
-
-const Chip = (props) => (
-    <ThemeProvider theme={props.theme}>
-        <Container>
-            <Body1 className="text">{ props.children }</Body1>
-        </Container>
-    </ThemeProvider>
-)
 
 Chip.defaultProps = {
     theme: theme

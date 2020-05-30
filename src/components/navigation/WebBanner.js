@@ -1,8 +1,6 @@
 import React  from 'react'
-import styled from 'styled-components'
-import Menu from '@material-ui/icons/Menu'
 
-import StyledBanner from './StyledBanner'
+import Banner from '../surface/Banner'
 import BannerLogo from './BannerLogo'
 import BannerPadding from './BannerPadding'
 import BannerSpacer from './BannerSpacer'
@@ -13,7 +11,7 @@ const WebBanner = (props) => {
     const { selected, children } = props;
 
     return (
-        <StyledBanner>
+        <Banner>
             <BannerPadding />
             <BannerLogo />
             <BannerSpacer />
@@ -23,7 +21,7 @@ const WebBanner = (props) => {
                 { children }
             </TabBar>
             <BannerPadding />
-        </StyledBanner>
+        </Banner>
     )
 }
 

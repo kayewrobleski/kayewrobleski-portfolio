@@ -4,8 +4,6 @@ import PropTypes from 'prop-types'
 import theme from '../../styles/themes/default'
 
 const StyledTabBar = styled.div`
-    
-    background: ${props => props.theme.colors.primary.main};
     z-index: 10000;
     
     &.horizontal {
@@ -21,6 +19,7 @@ const StyledTabBar = styled.div`
     &.vertical {
         position: fixed;
         height: 100vh;
+        background: ${props => props.theme.colors.primary.light};
         width: ${props => props.theme.thickness(30)};
         top: ${props => props.theme.thickness('sm')};
         right: -0.5rem;

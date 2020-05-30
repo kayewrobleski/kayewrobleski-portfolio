@@ -2,10 +2,6 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled, { ThemeProvider } from 'styled-components'
 import theme from '../../styles/themes/default'
-import {
-    justifyContentProp,
-    textTransformProp
-} from '../common';
 
 const StyledTab = styled.div`
     height: ${props => props.height};
@@ -15,10 +11,10 @@ const StyledTab = styled.div`
     position: relative;
     
     background: transparent;
-    color: darkslategray;
+    color: ${props => props.theme.colors.text.primary};
     transition: color .3s;
 
-	font-family: Raleway, sans-serif;
+	font-family: ${props => props.theme.typography.fontFamily.primary};
 	font-size: 1rem;
 	font-weight: 600;
     
@@ -45,20 +41,6 @@ const Tab = (props) => {
             { label }
         </StyledTab>
     </ThemeProvider>;
-}
-
-export const tabStyles = {
-    justifyContentProp,
-    textTransformProp,
-    backgroundColor: PropTypes.string,
-    textColor: PropTypes.string,
-    spacing: PropTypes.string,
-    selectedStyles: {
-        backgroundColor: PropTypes.string,
-        borderStyle: PropTypes.oneOf(['solid', 'outset', 'none']),
-        borderSide: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
-        textColor: PropTypes.string,
-    }
 }
 
 Tab.propTypes = {
