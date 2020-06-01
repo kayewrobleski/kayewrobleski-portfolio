@@ -57,7 +57,7 @@ const Layout = (props) => {
       selected={selected==props.index} 
       clickHandler={() => handleChange(props.index)} />);
 
-  const vertical = window.innerWidth < 600;
+  const vertical = false;
   const page = pages[selected];
   console.log(page);
 
