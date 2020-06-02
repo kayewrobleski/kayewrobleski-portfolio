@@ -57,14 +57,13 @@ const Layout = (props) => {
       selected={selected==props.index} 
       clickHandler={() => handleChange(props.index)} />);
 
-  const vertical = window.innerWidth < 600;
   const page = pages[selected];
   console.log(page);
 
   return (
     <ThemeProvider theme={props.theme}>
-    <StyledLayout className={vertical ? '' : 'horizontal'}>
-      <ResponsiveTabBar className="nav" selected={selected} vertical={vertical}>
+    <StyledLayout>
+      <ResponsiveTabBar className="nav" selected={selected}>
         { tabElements }
       </ResponsiveTabBar>
         { pages[selected] }

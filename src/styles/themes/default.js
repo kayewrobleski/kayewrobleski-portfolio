@@ -75,7 +75,7 @@ const theme = {
             lg: 1280,
             md: 960,
             sm: 600,
-            xs: 350,
+            xs: 400,
         },
         up: (key) => breakpointUp(key),
         down: (key) => breakpointDown(key),
