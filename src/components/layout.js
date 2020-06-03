@@ -8,6 +8,7 @@ import theme from '../styles/themes/default'
 import HomePage from './pages/home/HomePage'
 import AboutPage from './pages/about/AboutPage'
 import ContactPage from './pages/contact/ContactPage'
+import PortfolioPage from './pages/portfolio/PortfolioPage'
 
 const StyledLayout = styled.div`
   .nav {
@@ -16,7 +17,7 @@ const StyledLayout = styled.div`
 
   overflow: auto;
   // margin: auto;
-  width: 70%;
+  max-width: 1080px;
   margin: auto;
   ${props => props.theme.breakpoints.down('xs')} {
       width: 95%;
@@ -33,15 +34,20 @@ const tabs = [
     index: 1
   },
   {
-    label: 'Contact',
+    label: 'Portfolio',
     index: 2
+  },
+  {
+    label: 'Contact',
+    index: 3
   }
 ];
 
 const pages = {
   0: <HomePage />,
   1: <AboutPage />,
-  2: <ContactPage />
+  2: <PortfolioPage />,
+  3: <ContactPage />
 };
 
 const Layout = (props) => {

@@ -9,6 +9,7 @@ const StyledTab = styled.div`
     padding: 0 1rem;
 	text-align: center;
     position: relative;
+    max-width: 1080px;
     
     background: transparent;
     color: ${props => props.theme.colors.text.primary};

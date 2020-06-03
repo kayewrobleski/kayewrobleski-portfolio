@@ -4,7 +4,7 @@ import styled, { ThemeProvider } from 'styled-components'
 
 import theme from '../../styles/themes/default';
 
-const StyledBanner = styled.div`
+const Banner = styled.div`
     position: fixed;
     ${props => props.position}: 0;
     left: 0;
@@ -13,30 +13,24 @@ const StyledBanner = styled.div`
     z-index: 10000;
     display: flex;
     background: ${props => props.theme.colors.primary.main};
-    padding: 0.5rem 0 0 0;
-
-    .content {
-        flex-grow: 1;
-        display: flex;
-    }
 `
 
-const Padding = styled.div`
-    ${props => props.theme.breakpoints.up('md')} {
-        width: 15%;
-    }
-    ${props => props.theme.breakpoints.down('sm')} {
-        width: 0;
-    }
-`
+// const Padding = styled.div`
+//     ${props => props.theme.breakpoints.up('md')} {
+//         width: 15%;
+//     }
+//     ${props => props.theme.breakpoints.down('sm')} {
+//         width: 0;
+//     }
+// `
 
-const Banner = (props) => <ThemeProvider theme={props.theme}>
-        <StyledBanner {...props}>
-            <Padding />
-            <div className="content">{props.children}</div>
-            <Padding />
-        </StyledBanner>
-    </ThemeProvider>
+// const Banner = (props) => <ThemeProvider theme={props.theme}>
+//         <StyledBanner {...props}>
+//             <Padding />
+//             <div className="content">{props.children}</div>
+//             <Padding />
+//         </StyledBanner>
+//     </ThemeProvider>
 
 Banner.propTypes = {
     thickness: PropTypes.oneOfType([
@@ -55,4 +49,4 @@ Banner.defaultProps = {
     justifyContent: 'left'
 }
 
-export default Banner;
+export default Banner

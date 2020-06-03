@@ -7,7 +7,6 @@ import theme from '../../../styles/themes/default'
 
 const Container = styled.div`
     width: 100%;
-    margin: auto;
     text-align: center;
     margin: 7rem auto;
 `

@@ -14,6 +14,7 @@ const StyledTabBar = styled.div`
             display: flex;
             right: 0;
         }
+        padding: 1rem;
     }
     
     &.vertical {

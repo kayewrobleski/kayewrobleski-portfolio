@@ -6,13 +6,14 @@ const theme = {
     colors: {
         primary: {
             light: '#263859',
-            main: '#17223b'
+            main: '#17223b',
+            dark: '#101729'
         },
         secondary: {
             main: '#ff6768'
         },
         text: {
-            primary: '#8290AA',
+            primary: '#a0abbf',
             secondary: '#ffffff'
         },
         common: {
@@ -63,13 +64,7 @@ const theme = {
         }        
     },
     breakpoints: {
-        keys: {
-            0: 'xs',
-            1: 'sm',
-            2: 'md',
-            3: 'lg',
-            4: 'xl'
-        },
+        keys: ['xs', 'sm', 'md', 'lg', 'xl'],
         values: {
             xl: 1920,
             lg: 1280,
@@ -100,13 +95,18 @@ const calcThickness = (value) => {
 }
 
 const breakpointUp = (key) => {
-    const value = theme.breakpoints.values[key];
-    return `@media (min-width: ${value}px)`;
+    const keys = theme.breakpoints.keys;
+    const index = keys.indexOf(key);
+    const lowerBound = index > 0
+        ? theme.breakpoints.values[keys[index-1]] + 1
+        : 0;
+
+    return `@media (min-width: ${lowerBound}px)`;
 }
 
 const breakpointDown = (key) => {
-    const value = theme.breakpoints.values[key];
-    return `@media (max-width: ${value}px)`;
+    const upperBound = theme.breakpoints.values[key];
+    return `@media (max-width: ${upperBound}px)`;
 }
 
 const breakpointBetween = (up, down) => {

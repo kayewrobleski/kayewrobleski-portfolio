@@ -5,7 +5,7 @@ import {
     text
 } from '@storybook/addon-knobs';
 
-import { Banner } from '../../src/components/surface';
+import Banner from '../../src/components/surface/Banner';
 import * as Knobs from './banner-knobs';
 
 import {

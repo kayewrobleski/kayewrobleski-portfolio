@@ -4,7 +4,8 @@ import styled from 'styled-components'
 import theme from '../../styles/themes/default'
 
 const Page = styled.div`
-    position: absolute;
+    max-width: 1080px;
+    margin: 3rem auto;
     width: inherit;
     top: ${props => props.theme.thickness('sm')};
     display: flex-column;
